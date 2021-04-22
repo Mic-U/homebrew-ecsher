@@ -5,25 +5,25 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.7.2"
+  version "0.7.3"
   license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.2/ecsher_0.7.2_Darwin_x86_64.tar.gz"
-    sha256 "df720968b9c85b1142c0bc3a8201c9714ee58327f66a554043fe5e042e59b82f"
+    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.3/ecsher_0.7.3_Darwin_x86_64.tar.gz"
+    sha256 "c256eebfb4781b990158ed8abcf29e916654518655a444eec1a711bec04f958f"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.2/ecsher_0.7.2_Darwin_arm64.tar.gz"
-    sha256 "d3b334e0de651cbdf7173f231576fc1a3ebfb0a049404763062f799b2c2042bc"
+    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.3/ecsher_0.7.3_Darwin_arm64.tar.gz"
+    sha256 "9c94d7d7464225a2b30b26d3f870e7b1783497393fd6ce102c330906e12cac14"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.2/ecsher_0.7.2_Linux_x86_64.tar.gz"
-    sha256 "338c8da1dab3b18a0e1b7ae1fc513a3c6db83e75dd7795ee91e3d5b1269d606b"
+    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.3/ecsher_0.7.3_Linux_x86_64.tar.gz"
+    sha256 "c1009a01b3a1757dfb7ccc715ac42ca5deeef758b667adfe99a521ab6f67b0c6"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.2/ecsher_0.7.2_Linux_arm64.tar.gz"
-    sha256 "f6505d4ad3200a9913be7f34fbb61e2aee777060aff9b8d090b28954329be5c0"
+    url "https://github.com/Mic-U/ecsher/releases/download/v0.7.3/ecsher_0.7.3_Linux_arm64.tar.gz"
+    sha256 "70ea58b5623f3d5bf4d8133fd1bcf1c87fd6bbfd3d1dd7d80b63de11153573d3"
   end
 
   def install
