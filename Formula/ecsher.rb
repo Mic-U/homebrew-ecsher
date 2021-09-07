@@ -5,25 +5,30 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.10.0"
+  version "0.11.0"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.10.0/ecsher_0.10.0_Darwin_x86_64.tar.gz"
-    sha256 "d1f09ae1bdaa82d06719345d685eb43199ded14058e67e52e24fde6656d09976"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Darwin_x86_64.tar.gz"
+      sha256 "36a494a377107246b6ed80bc178639a22337e94fd115ebacc7c20e5e7adfcbbd"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Darwin_arm64.tar.gz"
+      sha256 "f62c6737c0b735edf50f7d4d7c566c7e853091c75cbf26121ff61c820e787f09"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.10.0/ecsher_0.10.0_Darwin_arm64.tar.gz"
-    sha256 "c237f6cc76c3988cce42e45c969d7c08c16f34ddcaa3c5680d715644f86a6024"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.10.0/ecsher_0.10.0_Linux_x86_64.tar.gz"
-    sha256 "731aed92f10d69040deee0d8e4db4f820f2a368174429c6eb3862d10de377ed0"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Mic-U/ecsher/releases/download/v0.10.0/ecsher_0.10.0_Linux_arm64.tar.gz"
-    sha256 "ca18f846cd307e2a99503333637d62f841c5dbb477564d20cb78bf963a04cdc5"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Linux_x86_64.tar.gz"
+      sha256 "05812d1df988680a02c1e69e1e9ac2d0a2686272b725d4f2323b9fbef682fb11"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Linux_arm64.tar.gz"
+      sha256 "738d0c0e042cff2f3f70875569cea48deb6902124da609c2ca16c83ec79c1910"
+    end
   end
 
   def install
