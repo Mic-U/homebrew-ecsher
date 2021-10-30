@@ -5,33 +5,44 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.11.0"
+  version "0.11.1"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Darwin_x86_64.tar.gz"
-      sha256 "36a494a377107246b6ed80bc178639a22337e94fd115ebacc7c20e5e7adfcbbd"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Darwin_arm64.tar.gz"
-      sha256 "f62c6737c0b735edf50f7d4d7c566c7e853091c75cbf26121ff61c820e787f09"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.1/ecsher_0.11.1_Darwin_arm64.tar.gz"
+      sha256 "1f33524121b7d706252182ce8eb5660570bf1bf4a50c41f3492cae1fe349f86b"
+
+      def install
+        bin.install "ecsher"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.1/ecsher_0.11.1_Darwin_x86_64.tar.gz"
+      sha256 "48e884f68fd179afa0f18c863a2bc7b2116022e01e3b49f6496d668e63d3d249"
+
+      def install
+        bin.install "ecsher"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Linux_x86_64.tar.gz"
-      sha256 "05812d1df988680a02c1e69e1e9ac2d0a2686272b725d4f2323b9fbef682fb11"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.1/ecsher_0.11.1_Linux_x86_64.tar.gz"
+      sha256 "ec46c99a740432afa678f01f04e5b469bf79171d72a9247e0c231ccd83426905"
+
+      def install
+        bin.install "ecsher"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.0/ecsher_0.11.0_Linux_arm64.tar.gz"
-      sha256 "738d0c0e042cff2f3f70875569cea48deb6902124da609c2ca16c83ec79c1910"
-    end
-  end
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.11.1/ecsher_0.11.1_Linux_arm64.tar.gz"
+      sha256 "5958134cc4a7e754205d1856d95189e10b97dc8e5a85080aeb8eae3667563b2e"
 
-  def install
-    bin.install "ecsher"
+      def install
+        bin.install "ecsher"
+      end
+    end
   end
 end
