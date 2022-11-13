@@ -5,21 +5,21 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.13.0"
+  version "0.13.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.0/ecsher_0.13.0_Darwin_x86_64.tar.gz"
-      sha256 "16c101b2eb49f47345cd5e8f3598d13373ed53a5c3a370878e07386320c75897"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.1/ecsher_0.13.1_Darwin_x86_64.tar.gz"
+      sha256 "4707bf6b79273077297f0c84bb8c27bf414b721c7e5dba0ce3a78c28e66e3bc7"
 
       def install
         bin.install "ecsher"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.0/ecsher_0.13.0_Darwin_arm64.tar.gz"
-      sha256 "f8e6734a5f5f47b16af15738cda2cd03ba8d048ce7acab363318e9f9ab7b579f"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.1/ecsher_0.13.1_Darwin_arm64.tar.gz"
+      sha256 "d54b818c40ddaa48d6c8a8a9674c96e2cf127a71a17d6272ea800cdf07b5b6aa"
 
       def install
         bin.install "ecsher"
@@ -28,17 +28,17 @@ class Ecsher < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.0/ecsher_0.13.0_Linux_x86_64.tar.gz"
-      sha256 "85631d7e28956bf1b6e59fa621936612f5bbbaeed18ae419ae5e452faf9c654c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.1/ecsher_0.13.1_Linux_arm64.tar.gz"
+      sha256 "233975ead5ab8b059af3d93274344af9b40dcb9d5de8f069a0b0ecf67fee0583"
 
       def install
         bin.install "ecsher"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.0/ecsher_0.13.0_Linux_arm64.tar.gz"
-      sha256 "c2df211121e9919038868aa520e33dc1c9b4e467da433beb5e381ed21e3f7791"
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.13.1/ecsher_0.13.1_Linux_x86_64.tar.gz"
+      sha256 "edcba150cdc5a087bf746cfb44017ed11b899da0bd5c753f317b222be55a1b5c"
 
       def install
         bin.install "ecsher"
