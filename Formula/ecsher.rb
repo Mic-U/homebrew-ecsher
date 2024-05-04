@@ -5,21 +5,21 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.14.2"
+  version "0.15.1"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.14.2/ecsher_0.14.2_Darwin_arm64.tar.gz"
-      sha256 "9c936cb4cca9b2f47b3aa55b3355d970986fb58a79a6c6d7f78561a2fcb99db7"
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.1/ecsher_Darwin_x86_64.tar.gz"
+      sha256 "2cb58c56b977090a266d39b0ad3e9ff31225c53696c0b83405af3d86aa0cc0a3"
 
       def install
         bin.install "ecsher"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.14.2/ecsher_0.14.2_Darwin_x86_64.tar.gz"
-      sha256 "bc5904adf3361ac0bcdd571cc190a9a1119086ecf5d8e94ba9ee0337dd096f6e"
+    if Hardware::CPU.arm?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.1/ecsher_Darwin_arm64.tar.gz"
+      sha256 "94af55e317773f5583c6972ddc1dd6c3736ff57a1c100633c5d016e94effd069"
 
       def install
         bin.install "ecsher"
@@ -28,17 +28,17 @@ class Ecsher < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.14.2/ecsher_0.14.2_Linux_arm64.tar.gz"
-      sha256 "9950f45af7bd4c780eb191295f20ab426e79836631f107f8dec24f4206ba7dba"
+    if Hardware::CPU.intel?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.1/ecsher_Linux_x86_64.tar.gz"
+      sha256 "f5778c514c7c8fed8e332c1988f6b9dc3e30889b6e706342c66b27188102b2ae"
 
       def install
         bin.install "ecsher"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.14.2/ecsher_0.14.2_Linux_x86_64.tar.gz"
-      sha256 "cd3f723a39bfdd04ec052e5fa71ddb82b4f0e255b696dd0576869b201b39577a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.1/ecsher_Linux_arm64.tar.gz"
+      sha256 "67d3bb19d34fd5cfb392211d7948ee34ee0d53996739be68fe5005f39b6e5077"
 
       def install
         bin.install "ecsher"
