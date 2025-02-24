@@ -5,21 +5,21 @@
 class Ecsher < Formula
   desc "CLI tool describing ECS resources like kubectl written in Go"
   homepage "https://github.com/Mic-U/ecsher"
-  version "0.15.2"
+  version "0.15.3"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.2/ecsher_Darwin_x86_64.tar.gz"
-      sha256 "cddb24c6d35845badc2d29eb24d621db6fb50b75d66dc3f344359af99b756bc2"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.3/ecsher_Darwin_x86_64.tar.gz"
+      sha256 "5f24bf302e02c4598fc1c5ee0887772d1dfcdac211d4aecb83992e94e05fb7f9"
 
       def install
         bin.install "ecsher"
       end
     end
     on_arm do
-      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.2/ecsher_Darwin_arm64.tar.gz"
-      sha256 "b5c1905f76ef538226c14bf35ced9afe39e816974c8600233b6b6c9cabf85458"
+      url "https://github.com/Mic-U/ecsher/releases/download/v0.15.3/ecsher_Darwin_arm64.tar.gz"
+      sha256 "90b4de68f5fc48bfd36e9da44e8415a8733a9cf3194d3cd8c8deee19a612f221"
 
       def install
         bin.install "ecsher"
@@ -30,8 +30,8 @@ class Ecsher < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Mic-U/ecsher/releases/download/v0.15.2/ecsher_Linux_x86_64.tar.gz"
-        sha256 "8feefa680cc0b4740acdfd2e9b484036c553a8d43fb1e776ed5f2296f623e9ec"
+        url "https://github.com/Mic-U/ecsher/releases/download/v0.15.3/ecsher_Linux_x86_64.tar.gz"
+        sha256 "00a7331b791ad7c918d487aad08561f02eca0901b391cac885f4161b9f5ff922"
 
         def install
           bin.install "ecsher"
@@ -40,8 +40,8 @@ class Ecsher < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Mic-U/ecsher/releases/download/v0.15.2/ecsher_Linux_arm64.tar.gz"
-        sha256 "6acc8acebe6afa1db1e068115e5168c23f57bbb6c30400ba91e48fcfe3f8eda7"
+        url "https://github.com/Mic-U/ecsher/releases/download/v0.15.3/ecsher_Linux_arm64.tar.gz"
+        sha256 "ea4e22da0f3ac3b1a66a0dbb5ae9fae768958da7049007537e1f4382302e7c6a"
 
         def install
           bin.install "ecsher"
